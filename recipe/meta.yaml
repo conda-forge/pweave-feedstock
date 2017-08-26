@@ -1,5 +1,5 @@
-{% set version = "0.25" %}
-{% set sha256 = "1c0f6921196646243eb7ff9eee742305909be2bc7a5eeeb06a7d1f66cc9758c7" %}
+{% set version = "0.30" %}
+{% set sha256 = "71394c429a3c806ea5fd6e7d9330714bd3a436e5cc5ad1eda649d02bbb515067" %}
 
 package:
   name: pweave
@@ -14,9 +14,7 @@ build:
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
-    - Pweave = pweave.scripts:weave
     - pweave = pweave.scripts:weave
-    - Ptangle = pweave.scripts:tangle
     - ptangle = pweave.scripts:tangle
     - pypublish = pweave.scripts:publish
     - pweave-convert = pweave.scripts:convert
@@ -29,7 +27,11 @@ requirements:
     - python
     - markdown
     - pygments
-    - beautifulsoup4
+    - ipykernel
+    - ipython
+    - nbformat
+    - nbconvert
+    - jupyter_client
 
 test:
   imports:
@@ -38,10 +40,11 @@ test:
     - pweave.themes
     - pweave.formatters
     - pweave.processors
+    - pweave.bokeh
 
   commands:
-    - Pweave --help
-    - Ptangle --help
+    - pweave --help
+    - ptangle --help
     - pypublish --help
     - pweave-convert --help
 
