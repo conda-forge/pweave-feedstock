@@ -1,5 +1,5 @@
-{% set version = "0.30.1" %}
-{% set sha256 = "323b96d2e90d2cebe62d4942933fc29807bdf0d2728236d55155b3b21615ef4a" %}
+{% set version = "0.30.2" %}
+{% set sha256 = "df4b77539c08723131fc77132cb42995d642ed7343248814b9dc9ae706ba6f08" %}
 
 package:
   name: pweave
