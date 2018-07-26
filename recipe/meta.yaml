@@ -30,7 +30,7 @@ requirements:
     - markdown
     - pygments
     - ipykernel
-    - ipython >= 6.0
+    - ipython >=6.0
     - nbformat
     - nbconvert
     - jupyter_client
