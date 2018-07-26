@@ -1,5 +1,5 @@
-{% set version = "0.30.2" %}
-{% set sha256 = "df4b77539c08723131fc77132cb42995d642ed7343248814b9dc9ae706ba6f08" %}
+{% set version = "0.30.3" %}
+{% set sha256 = "5e5298d90e06414a01f48e0d6aa4c36a70c5f223d929f2a9c7e2d388451c7357" %}
 
 package:
   name: pweave
@@ -30,7 +30,7 @@ requirements:
     - markdown
     - pygments
     - ipykernel
-    - ipython
+    - ipython >= 6.0
     - nbformat
     - nbconvert
     - jupyter_client
