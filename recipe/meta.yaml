@@ -7,13 +7,13 @@ package:
 
 source:
   fn: Pweave-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/p/pweave/Pweave-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/pweave/Pweave-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 2
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - pweave = pweave.scripts:weave
     - ptangle = pweave.scripts:tangle
@@ -23,10 +23,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3
+    - python >={{ python_min }}
     - markdown
     - pygments
     - ipykernel
@@ -36,6 +36,8 @@ requirements:
     - jupyter_client
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pweave
     - pweave.formatters
